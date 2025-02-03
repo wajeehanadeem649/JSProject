@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project 3</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(6, 145, 6);
+            margin: auto;
+        }
+        .header{
+            background-color: rgb(100, 93, 0);
+            height: 50px;
+            padding-top: 5px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border: 4px solid yellow;
+            border-bottom-right-radius: 59px;
+            border-bottom-left-radius: 15px;
+            font-size: 43px;
+        }
+        .header:hover{
+            color: chartreuse;
+        }
+        .head{
+            color: chartreuse;
+            margin: 45px;
+            text-align: center;
+            
+        }
+        .para{
+            color:chartreuse ;
+            margin-left: 25px;
+        }
+        #time{
+            margin-left: 25px;
+            color: aliceblue;
+        }
+        #times{
+            margin-left: 25px;
+        }
+        #shape{
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+            position: relative;
+            
+        }
+        #shape:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Project</div>
+    <h1 class="head">Test Your Reaction!</h1>
+    <h4 class="para">Click on the Boxes as quickly as you can ..</h4>
+    <input type="text" placeholder="Time:" id="times"><span id="time"></span>
+    <div id="shape"></div>
+
+
+    
+    <script>
+        var start= new Date().getTime();
+        function make(){
+            
+            
+            document.getElementById("shape").style.display="block";
+            start=new Date().getTime();
+            setTimeout(make,Math.random()*2000);
+            
+            
+       }
+         make();
+
+
+         
+
+         function delay(){
+            function color(){
+            var letters='0123456789ABCDEF';
+            var colors="#";
+            for (var i=0;i<6; i++ ){
+                colors += letters[Math.floor(Math.random()*16)];
+            }
+            return colors;
+         }
+      
+        var position= Math.random() * 400;
+        var size= Math.random() * 300 + 100;
+        if(Math.random()>0.5){
+            document.getElementById("shape").style.borderRadius="50%";
+        }else{
+            document.getElementById("shape").style.borderRadius="0%";
+        }
+        document.getElementById("shape").style.width=size + "px";
+        document.getElementById("shape").style.height=size + "px";
+        document.getElementById("shape").style.top=position + "px";
+        document.getElementById("shape").style.left=position + "px";
+        document.getElementById("shape").style.backgroundColor=color();
+
+         }
+         delay();
+
+         
+
+
+
+
+         document.getElementById("shape").onclick=function(){
+            var end= new Date().getTime();
+            var timetaken= (end- start)/1000;
+          
+            document.getElementById("shape").style.display="none";
+            document.getElementById("time").innerHTML=timetaken + "s";
+       delay();
+        }
+
+
+
+       
+    </script>
+
+</body>
+</html>
