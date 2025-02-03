@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Project</title>
+    <style>
+        body{
+            background-color: rgb(168, 110, 55);
+            margin: auto;
+           
+        }
+        .head{
+            background-color: rgb(230, 145, 42);
+           border: 3px solid black;
+           text-align: center;
+           color: white;
+           font-weight: bold;
+           font-size: 40px;
+           padding: 1px;
+        }
+        #logo{
+width: 51px;
+float: left;
+padding-left: 5px;
+padding-top: 2px;
+border-radius: 30px;
+        }
+
+        .container{
+            width: 600px;
+           background-color: rgb(12, 100, 100);
+           border-left: 3px solid rgb(33, 243, 173);
+           border-right: 3px solid rgb(33, 194, 243);
+           border-top: 3px solid rgb(208, 33, 243);
+           border-bottom: 3px solid rgb(243, 33, 114);
+           float: left;
+           height: 300px;
+           margin: 170px;
+        }
+        .circle{
+            width: 150px;
+            height: 150px;
+           
+            float: left;
+            margin: 10px;
+            border-radius: 100px;
+            padding: 6px;
+        }
+        .colo{
+            color: azure;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-style: italic;
+        }
+        #blue-circle{
+            background-color: blue;
+            border: 2px solid yellow;
+            padding-left: 7px;
+            color: azure;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-style: italic;
+            
+        }
+        #red-circle{
+            background-color: rgb(211, 46, 137);
+            border: 2px solid yellow;
+            color: azure;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-style: italic;
+        }
+        #green-circle{
+            background-color: rgb(75, 177, 50);
+            border: 2px solid yellow;
+                    
+            
+        }
+        .circle:hover{
+            cursor: pointer;
+            
+        }
+       #ff{
+        padding: 45px;
+        color: azure;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            font-style: italic;
+       }
+    </style>
+</head>
+<body>
+    <!--Disappearing circles-->
+    <div class="head"> <img src="c:\Users\AF\Pictures\icon.PNG" id="logo">
+       <div > PROJECT</div>
+      
+    </div>
+    <div class="container">
+        <h3 class="colo">Disappearing Circles</h3>
+    <div class="circle" id="blue-circle">
+        <h4 id="ff">BLUE</h4></div> 
+    <div class="circle" id="red-circle">
+        <h4 id="ff">RED</h4></div>
+    <div class="circle" id="green-circle">
+        <h4 id="ff">GREEN</h4></div></div>
+
+    <script>
+ 
+        function make(){
+            
+            
+            document.getElementById("blue-circle").style.display="block";
+            document.getElementById("red-circle").style.display="block";
+            document.getElementById("green-circle").style.display="block";
+            setTimeout(make,Math.random()*2000);
+         
+       }
+       make();  
+
+
+
+
+
+        document.getElementById("blue-circle").onclick= function(){
+           
+            document.getElementById("blue-circle").style.display="none" ; 
+           
+           }
+           
+        document.getElementById("red-circle").onclick= function(){
+            document.getElementById("red-circle").style.display="none" ;  
+        }
+        document.getElementById("green-circle").onclick= function(){
+            document.getElementById("green-circle").style.display="none" ;  
+        }
+       
+    </script>
+    
+</body>
+</html>
